@@ -1,19 +1,28 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 function UserDashBoard() {
-  const selectedUsers = useSelector((state) => state.user.selectedUsers);
 
   const routes = [
-    { path: "/user/dashboard/all-users", name: "Users" },
-    { path: "/user/dashboard/users-group", name: "Users Group" },
-    { path: "/user/dashboard/user-profile", name: "My Profile" },
+    { 
+      path: "/user/dashboard/all-users",
+      name: "Users" 
+    },
+    { 
+      path: "/user/dashboard/users-group", 
+      name: "Users Group" 
+    },
+    { 
+      path: "/user/dashboard/user-profile", 
+      name: "My Profile" 
+    },
+    { 
+      path: "/user/dashboard/add-user", 
+      name: "Add New User" 
+    }
   ];
 
-  const handleSendMessages = () => {
-    console.log("Selected users for messaging:", selectedUsers);
-  };
+ 
 
   return (
     <div className="flex bg-[white]">
@@ -29,12 +38,6 @@ function UserDashBoard() {
       </div>
 
       <div className="w-[80%] bg-[#D1D3D7] h-[100vh]">
-        <div className="flex justify-between items-center">
-          <h1 className="text-[20px] font-bold m-5">Users</h1>
-          <button className="btn m-5 text-[lime]" onClick={handleSendMessages}>
-            Send Messages
-          </button>
-        </div>
 
         <div>
           <Outlet />
