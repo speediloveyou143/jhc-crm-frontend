@@ -4,6 +4,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import Pricing from "./pages/pricingpage/Pricing";
+
 import UserDashBoard from "./pages/UserDashboard/UserDashBoard";
 import UsersData from "./pages/UserDashboard/UsersData";
 import UsersGroup from "./pages/UserDashboard/UsersGroup";
@@ -17,7 +19,7 @@ export default function App() {
                 <Route path="/" element={<AppLayout />}>
                   <Route path="signin" element={<Signin />} />
                   <Route path="signup" element={<Signup />} />
-
+                  <Route path="pricing" element={< Pricing/>} >
                   <Route path="/user/dashboard" element={<UserDashBoard />}>
           
                     <Route path="/user/dashboard/all-users" element={<UsersData />} />
@@ -29,6 +31,5 @@ export default function App() {
                 </Route>
               </Routes>
           </BrowserRouter>
-
   );
 }
