@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-  import {
-  UserIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  BriefcaseIcon,
-  CheckIcon,
-} from '@heroicons/react/24/outline';
+import {UserIcon,EnvelopeIcon,PhoneIcon,BriefcaseIcon,CheckIcon} from '@heroicons/react/24/outline';
 
 const UsersData = () => {
   const [users, setUsers] = useState([]);
@@ -57,7 +51,7 @@ const UsersData = () => {
   };
 
   return (
-    <div className="p-6  min-h-screen">
+    <div className="p-6 min-h-screen">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-semibold text-gray-800 flex items-center gap-2">
           <UserIcon className="w-6 h-6 text-blue-600" />
@@ -71,7 +65,7 @@ const UsersData = () => {
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-lg shadow-md">
+      <div className=" carousel carousel-vertical h-[615px] w-full  overflow-x-auto rounded-lg shadow-md">
         <table className="min-w-full bg-white border border-gray-200 text-sm">
           <thead className="bg-blue-100 text-blue-700">
             <tr>
