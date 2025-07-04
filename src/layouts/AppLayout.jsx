@@ -1,13 +1,13 @@
-import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
-export default function AppLayout() {
+const AppLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div>
       <Navbar />
-      <main className="p-4 flex-1">
-        <Outlet />
-      </main>
+      <Outlet />
     </div>
   );
-}
+};
+
+export default AppLayout;
