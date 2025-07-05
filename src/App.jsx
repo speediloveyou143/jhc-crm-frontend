@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+
 import AppLayout from "./layouts/AppLayout";
 import WhyCrm from "./pages/WhyCrm";
 import Solutions from "./pages/Solutions";
@@ -8,27 +10,35 @@ import Customers from "./pages/Customers";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import LandingPages from "./pages/landingPages";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import ContactUs from "./pages/ContactUs";
+
+import Pricing from "./pages/pricingpage/Pricing";
+
+import UserDashBoard from "./pages/UserDashboard/UserDashBoard";
+import UsersData from "./pages/UserDashboard/UsersData";
+import UsersGroup from "./pages/UserDashboard/UsersGroup";
+import UserProfile from "./pages/UserDashboard/UserProfile";
+import AddUser from "./pages/UserDashboard/AddUser";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route path="/" element={<LandingPages />} />
-          <Route path="choose-us" element={<WhyCrm />} />
-          <Route path="solutions" element={<Solutions />} />
-          <Route path="resources" element={<Resources />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="customers" element={<Customers />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="signin" element={<Signin />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy/>} />
-          <Route path="contact-us" element={<ContactUs/>} />
+          <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<AppLayout />}>
+                  <Route path="/" element={<LandingPages />} />
+                  <Route path="signin" element={<Signin />} />
+                  <Route path="signup" element={<Signup />} />
+                  <Route path="pricing" element={< Pricing/>} >
+                  <Route path="/user/dashboard" element={<UserDashBoard />}>
           
-        </Route>
-      </Routes>
-    </Router>
+                    <Route path="/user/dashboard/all-users" element={<UsersData />} />
+                    <Route path="/user/dashboard/users-group" element={<UsersGroup />} />
+                    <Route path="/user/dashboard/user-profile" element={<UserProfile />} />
+                    <Route path="/user/dashboard/add-user" element={<AddUser />} />
+                 </Route>
+          
+                </Route>
+              </Routes>
+          </BrowserRouter>
+
   );
 }
