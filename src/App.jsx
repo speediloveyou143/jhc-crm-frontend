@@ -2,8 +2,15 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 import AppLayout from "./layouts/AppLayout";
+import WhyCrm from "./pages/WhyCrm";
+import Solutions from "./pages/Solutions";
+import Resources from "./pages/Resources";
+import Pricing from "./pages/Pricing";
+import Customers from "./pages/Customers";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import LandingPages from "./pages/landingPages";
+
 import Pricing from "./pages/pricingpage/Pricing";
 
 import UserDashBoard from "./pages/UserDashboard/UserDashBoard";
@@ -17,6 +24,7 @@ export default function App() {
           <BrowserRouter>
               <Routes>
                 <Route path="/" element={<AppLayout />}>
+                  <Route path="/" element={<LandingPages />} />
                   <Route path="signin" element={<Signin />} />
                   <Route path="signup" element={<Signup />} />
                   <Route path="pricing" element={< Pricing/>} >
@@ -31,5 +39,6 @@ export default function App() {
                 </Route>
               </Routes>
           </BrowserRouter>
+
   );
 }
