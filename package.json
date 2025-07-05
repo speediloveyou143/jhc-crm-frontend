@@ -11,12 +11,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+
+     "libphonenumber-js": "^1.12.9",
     "axios": "^1.10.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^7.6.2",
     "react-world-flags": "^1.6.0"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
